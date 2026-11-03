@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Frances Hodgkins</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Frances Hodgkins (1869–1947): the Dunedin-born painter who became one of the leading modernists in Britain.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Karla:wght@500;700&display=swap">
+<style>
+/* Layout: a single reading column, with a wide "palette strip" opener and a two-track timeline (year | event). */
+:root {
+  --ground: #EEF0EA;      /* chalky grey-green paper */
+  --ink: #23262B;
+  --muted: #5C6460;
+  --rule: #C9CEC4;
+  --ochre: #B07A1C;       /* her late-period yellow ochre */
+  --cobalt: #2F5D8A;
+  --rose: #B4646A;
+  --olive: #6E7444;
+  --panel: #E3E7DE;
+  --display: "Gloock", "Libre Caslon Display", Georgia, serif;
+  --body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --label: "Karla", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #1B1E1D; --ink: #E6E4DC; --muted: #A3A89F; --rule: #3A403C;
+    --ochre: #D9A441; --cobalt: #7FA8D1; --rose: #D48D92; --olive: #A7AD78; --panel: #232826;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #1B1E1D; --ink: #E6E4DC; --muted: #A3A89F; --rule: #3A403C;
+  --ochre: #D9A441; --cobalt: #7FA8D1; --rose: #D48D92; --olive: #A7AD78; --panel: #232826;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+.wrap {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding-block: 0 4rem;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+a { color: var(--cobalt); text-underline-offset: 0.15em; }
+a:focus-visible { outline: 2px solid var(--ochre); outline-offset: 2px; }
+
+/* Opener */
+.strip {
+  display: grid;
+  grid-template-columns: 5fr 2fr 3fr 1fr 4fr;
+  height: 0.75rem;
+}
+.strip span:nth-child(1) { background: var(--ochre); }
+.strip span:nth-child(2) { background: var(--rose); }
+.strip span:nth-child(3) { background: var(--olive); }
+.strip span:nth-child(4) { background: var(--ink); }
+.strip span:nth-child(5) { background: var(--cobalt); }
+
+header.hero { padding-block: 3.5rem 2rem; display: grid; gap: 0.75rem; }
+.eyebrow {
+  font-family: var(--label); font-weight: 700; font-size: 0.75rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin: 0;
+}
+h1 {
+  font-family: var(--display); font-weight: 400;
+  font-size: clamp(2.75rem, 9vw, 5rem); line-height: 0.95; margin: 0;
+  text-wrap: balance;
+}
+.dates {
+  font-family: var(--label); font-weight: 500; font-size: 1rem; color: var(--ink);
+  font-variant-numeric: tabular-nums; margin: 0;
+}
+.dates b { color: var(--ochre); font-weight: 700; }
+.lede { font-size: 1.25rem; line-height: 1.5; margin: 0.5rem 0 0; max-width: 36rem; }
+
+h2 {
+  font-family: var(--display); font-weight: 400; font-size: 1.75rem; line-height: 1.15;
+  margin: 0; text-wrap: balance;
+}
+section { display: grid; gap: 1rem; padding-block: 2.25rem; border-top: 1px solid var(--rule); }
+section p { margin: 0; max-width: 65ch; }
+
+/* Timeline */
+ol.timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+ol.timeline li {
+  display: grid; grid-template-columns: 6.5rem 1fr; gap: 1rem;
+  padding-block: 0.7rem; border-bottom: 1px dashed var(--rule);
+}
+ol.timeline li:last-child { border-bottom: 0; }
+.yr {
+  font-family: var(--label); font-weight: 700; font-size: 0.9rem; color: var(--ochre);
+  font-variant-numeric: tabular-nums; padding-top: 0.2rem;
+}
+.ev { min-width: 0; }
+.ev strong { font-weight: 600; }
+
+/* Places */
+.places { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.places li {
+  font-family: var(--label); font-weight: 500; font-size: 0.85rem;
+  padding: 0.3rem 0.7rem; border: 1px solid var(--rule); border-radius: 999px;
+}
+
+/* Works */
+.works { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
+.works li { display: grid; gap: 0.2rem; padding-block: 1rem; border-bottom: 1px solid var(--rule); }
+.works li:last-child { border-bottom: 0; }
+.works .t { font-family: var(--display); font-size: 1.3rem; line-height: 1.2; }
+.works .meta {
+  font-family: var(--label); font-weight: 500; font-size: 0.82rem; letter-spacing: 0.02em;
+  color: var(--muted); font-variant-numeric: tabular-nums;
+}
+.works p { font-size: 1rem; }
+
+blockquote {
+  margin: 0; padding: 1.25rem 1.5rem; background: var(--panel);
+  border-left: 3px solid var(--rose); font-style: italic; font-size: 1.15rem;
+}
+
+.sources { font-size: 0.92rem; color: var(--muted); }
+.sources ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 0.3rem; }
+footer { font-family: var(--label); font-size: 0.8rem; color: var(--muted); padding-top: 1.5rem; border-top: 1px solid var(--rule); }
+
+@media (max-width: 480px) {
+  ol.timeline li { grid-template-columns: 1fr; gap: 0.15rem; }
+  .lede { font-size: 1.125rem; }
+}
+</style>
+</head>
+<body>
+<div class="strip" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+<main class="wrap">
+
+  <header class="hero">
+    <p class="eyebrow">Painter · New Zealand and Britain</p>
+    <h1>Frances Hodgkins</h1>
+    <p class="dates"><b>b.</b> 28 April 1869, Dunedin &nbsp;·&nbsp; <b>d.</b> 13 May 1947, near Dorchester, Dorset</p>
+    <p class="lede">A watercolourist from Dunedin who left for Europe at 31 and spent four decades reinventing herself, ending up as one of the leading modernist painters in Britain.</p>
+  </header>
+
+  <section aria-labelledby="about">
+    <h2 id="about">About</h2>
+    <p>Frances Mary Hodgkins grew up in Dunedin, the daughter of William Mathew Hodgkins, a lawyer and keen amateur watercolourist who gave her her first lessons. Her sister Isabel (later Isabel Field) also painted. Frances took classes with the visiting Italian painter G. P. Nerli in 1893 and studied at the Dunedin School of Art in 1895–96.</p>
+    <p>In 1901 she sailed for Europe. She lived there for the rest of her life apart from two return visits, moving between England, France, Morocco and Spain, painting and teaching to pay her way. Her early watercolours of people and markets gave way, from the late 1920s, to loose, high-keyed still lifes set in landscapes, painted in oil and later in gouache.</p>
+    <p>Recognition came late. She joined the Seven and Five Society in 1929, alongside younger artists such as Ben Nicholson and Barbara Hepworth, and in 1940 she was selected for the British pavilion at the Venice Biennale, a showing the war cancelled. She spent her last years in Corfe Castle, Dorset.</p>
+  </section>
+
+  <section aria-labelledby="timeline">
+    <h2 id="timeline">Timeline</h2>
+    <ol class="timeline">
+      <li><span class="yr">1869</span><span class="ev">Born 28 April at Royal Terrace, Dunedin.</span></li>
+      <li><span class="yr">1893</span><span class="ev">Takes classes from G. P. Nerli.</span></li>
+      <li><span class="yr">1895–96</span><span class="ev">Studies at the Dunedin School of Art.</span></li>
+      <li><span class="yr">1901</span><span class="ev">Leaves Dunedin in February; reaches London in April.</span></li>
+      <li><span class="yr">1910</span><span class="ev">Becomes the <strong>first woman to teach at the Académie Colarossi</strong> in Paris, then runs her own watercolour school.</span></li>
+      <li><span class="yr">1914–18</span><span class="ev">Spends the First World War painting in St Ives, Cornwall.</span></li>
+      <li><span class="yr">mid-1920s</span><span class="ev">Works as a fabric designer for the Calico Printers' Association in Manchester.</span></li>
+      <li><span class="yr">1929–34</span><span class="ev">Member of the Seven and Five Society, London.</span></li>
+      <li><span class="yr">1934</span><span class="ev">First stays in Dorset, at Worth Matravers.</span></li>
+      <li><span class="yr">1935–36</span><span class="ev">Paints in Spain.</span></li>
+      <li><span class="yr">1940</span><span class="ev">Selected for the British pavilion at the Venice Biennale; the war stops the work reaching Venice. Settles for good in Corfe Castle, Dorset.</span></li>
+      <li><span class="yr">1943</span><span class="ev">Military traffic damages her studio; moves briefly to Cerne Abbas.</span></li>
+      <li><span class="yr">1947</span><span class="ev">Dies 13 May at Herrison House, a hospital near Dorchester. Her ashes are returned to New Zealand.</span></li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="places">
+    <h2 id="places">Where she worked</h2>
+    <ul class="places">
+      <li>Dunedin</li><li>London</li><li>Paris</li><li>Concarneau</li><li>Morocco</li>
+      <li>St Ives</li><li>Manchester</li><li>Spain</li><li>Worth Matravers</li><li>Corfe Castle</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="works">
+    <h2 id="works">Selected works</h2>
+    <ul class="works">
+      <li>
+        <span class="t">Double Portrait</span>
+        <span class="meta">c. 1922–25 · oil · Hocken Collections, University of Otago</span>
+      </li>
+      <li>
+        <span class="t">Wings over Water</span>
+        <span class="meta">1931–32 · Tate, London</span>
+        <p>Te Papa holds the pencil study for the painting.</p>
+      </li>
+      <li>
+        <span class="t">Pleasure Garden</span>
+        <span class="meta">1933 · Christchurch Art Gallery Te Puna o Waiwhetū</span>
+        <p>Offered to Christchurch as a gift in 1948, it set off a long public row over modern art before the city finally accepted it.</p>
+      </li>
+      <li>
+        <span class="t">Self Portrait: Still Life</span>
+        <span class="meta">c. 1935 · oil on cardboard · Auckland Art Gallery Toi o Tāmaki</span>
+        <p>A self-portrait with no face: her belongings (a beret, a scarf, shoes, a bag) stand in for the painter. Te Papa holds a related panel, <em>Still Life: Self-portrait</em>.</p>
+      </li>
+      <li>
+        <span class="t">Zipp</span>
+        <span class="meta">c. 1945 · Christchurch Art Gallery Te Puna o Waiwhetū</span>
+      </li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="legacy">
+    <h2 id="legacy">Legacy</h2>
+    <p>Hodgkins is now counted among New Zealand's most important painters and as a significant figure in British modernism. The University of Otago's <strong>Frances Hodgkins Fellowship</strong>, set up in 1962, has supported generations of New Zealand artists.</p>
+    <p>For the 150th anniversary of her birth, Auckland Art Gallery staged <em>Frances Hodgkins: European Journeys</em> (4 May – 1 September 2019), curated by Mary Kisler after nearly ten years retracing her travels. It toured to Dunedin, Christchurch and Wellington into 2020. The gallery also publishes an online catalogue raisonné, <a href="https://completefranceshodgkins.com" target="_blank" rel="noopener">The Complete Frances Hodgkins</a>.</p>
+  </section>
+
+  <section class="sources" aria-labelledby="sources">
+    <h2 id="sources">Sources</h2>
+    <ul>
+      <li><a href="https://teara.govt.nz/en/1966/hodgkins-frances" target="_blank" rel="noopener">Te Ara: Hodgkins, Frances</a></li>
+      <li><a href="https://nzhistory.govt.nz/death-of-frances-hodgkins" target="_blank" rel="noopener">NZHistory: Death of Frances Hodgkins</a></li>
+      <li><a href="https://franceshodgkins.com/chronology" target="_blank" rel="noopener">franceshodgkins.com: Chronology</a></li>
+      <li><a href="https://www.aucklandartgallery.com/explore-art-and-ideas/artwork/3121" target="_blank" rel="noopener">Auckland Art Gallery: Self Portrait: Still Life</a></li>
+      <li><a href="https://www.aucklandartgallery.com/whats-on/exhibition/frances-hodgkins-european-journeys" target="_blank" rel="noopener">Auckland Art Gallery: European Journeys</a></li>
+      <li><a href="https://artuk.org/discover/stories/from-new-zealand-to-cornwall-the-aesthetic-loneliness-of-frances-hodgkins" target="_blank" rel="noopener">Art UK: From New Zealand to Cornwall</a></li>
+      <li><a href="https://completefranceshodgkins.com" target="_blank" rel="noopener">The Complete Frances Hodgkins</a></li>
+    </ul>
+  </section>
+
+  <footer>Some dates differ between sources, notably her years at the Calico Printers' Association (given variously as 1923–26 and 1925–26).</footer>
+</main>
+</body>
+</html>
